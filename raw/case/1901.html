@@ -1,0 +1,122 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文章不再存在</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #3099d0;
+            color: #FFF
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            max-width: 800px;
+            margin: 0px auto;
+            padding: 1em
+        }
+
+            .wrapper h1 {
+                font-size: 6em;
+                display: block;
+                width: 50%;
+                text-align: right;
+                margin: 40px 30px 15px 0;
+                font-family: sans-serif
+            }
+
+            .wrapper h2 {
+                overflow: hidden;
+                font-size: 2em;
+            }
+
+            .wrapper .error {
+                clear: both;
+                text-align: center;
+                width: 80%;
+                max-width: 500px;
+            }
+
+                .wrapper .error h3 {
+                    margin-bottom: 1em
+                }
+
+                    .wrapper .error h3 small {
+                        display: block
+                    }
+
+        .btn_grp {
+            clear: both;
+            margin: 2em 0;
+            text-align: center
+        }
+
+            .btn_grp a {
+                display: inline-block;
+                border-radius: 5px;
+                padding: .5em 1.3em;
+                margin: 0 1em 1em;
+                min-width: 10em;
+                color: #FFF;
+                text-align: center;
+                border: 1px solid #FFF;
+                text-decoration: none;
+                transition: .3s ease-out
+            }
+
+                .btn_grp a:hover, .btn_grp a:focus {
+                    background: rgba(0,0,0,.2);
+                    box-shadow: none;
+                    outline: none
+                }
+
+        media screen and (max-width:767px) {
+            .wrapper h1
+
+        {
+            float: none;
+            margin: 10px 0 5px;
+            line-height: 1;
+            text-align: center;
+            width: 100%;
+            font-size: 8em
+        }
+
+        .wrapper h2 {
+            clear: both;
+            text-align: center;
+            margin: 0;
+            padding: 0
+        }
+
+        .wrapper .error {
+            margin-top: 1em
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="error">
+            <h1>
+                    <img src="/Content/Front/images/logo_CRC.png" alt="錯誤">
+            </h1>
+            <h2>
+                文章不再存在
+            </h2>
+            <h3>該文章已被刪除或下架，如造成不便，敬請見諒。</h3>
+            <h3>
+                The article has been deleted or removed, we apologize for any inconvenience caused.
+            </h3>
+        </div>
+    </div>
+</body>
