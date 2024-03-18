@@ -15,7 +15,7 @@ $dataPath = $basePath . '/data/case';
 if (!file_exists($dataPath)) {
     mkdir($dataPath, 0777, true);
 }
-$rawId = 3870;
+$rawId = 3931;
 while ($rawId > 0) {
     $rawFile = $rawPath . '/' . $rawId . '.html';
     if (!file_exists($rawFile)) {
