@@ -10,7 +10,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 $browser = new HttpBrowser(HttpClient::create());
 
-$crawler = $browser->request('GET', 'https://crc.sfaa.gov.tw/ChildYoungLaw/Sanction?page=1&pagesize=30&name=&target=&city=0&startDate=&endDate=');
+$crawler = $browser->request('GET', 'https://crc.sfaa.gov.tw/ChildYoungLaw/Sanction?page=1&pagesize=30&name=&target=all&city=0&startDate=&endDate=&dosearch=true');
 $page = $crawler->html();
 $pos = strpos($page, '/ChildYoungLaw/Detail/');
 while (false !== $pos) {
