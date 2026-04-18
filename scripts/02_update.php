@@ -2,74 +2,95 @@
 $basePath = dirname(__DIR__);
 require __DIR__ . '/vendor/autoload.php';
 
-$rawPath = $basePath . '/raw/case';
-$dataPath = $basePath . '/data/case';
-
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient;
 
-$browser = new HttpBrowser(HttpClient::create());
+$rawPath = $basePath . '/raw/case';
+$dataPath = $basePath . '/data/case';
+$baseUrl = 'https://crc.sfaa.gov.tw';
+$listUrl = $baseUrl . '/ChildYoungLaw/Sanction?page=1&pagesize=30&name=&target=all&city=0&startDate=&endDate=&dosearch=true';
 
-$crawler = $browser->request('GET', 'https://crc.sfaa.gov.tw/ChildYoungLaw/Sanction?page=1&pagesize=30&name=&target=all&city=0&startDate=&endDate=&dosearch=true');
-$page = $crawler->html();
-$pos = strpos($page, '/ChildYoungLaw/Detail/');
-while (false !== $pos) {
-    $posEnd = strpos($page, '"', $pos);
-    $url = substr($page, $pos, $posEnd - $pos);
-    $parts = explode('/', $url);
-    $rawId = array_pop($parts);
-    $rawId = intval($rawId);
-    $data = [
-        'id' => $rawId,
-    ];
+$browser = new HttpBrowser(HttpClient::create());
+$crawler = $browser->request('GET', $listUrl);
+
+$detailLinks = $crawler->filter('a[href*="/ChildYoungLaw/Detail/"]');
+$detailLinks->each(function ($node) use ($browser, $baseUrl, $rawPath, $dataPath) {
+    $href = $node->attr('href');
+    $rawId = intval(basename($href));
+    if ($rawId === 0) {
+        return;
+    }
+
     $rawFile = $rawPath . '/' . $rawId . '.html';
     if (!file_exists($rawFile)) {
-        $crawler = $browser->request('GET', 'https://crc.sfaa.gov.tw/ChildYoungLaw/Detail/' . $rawId);
+        $crawler = $browser->request('GET', $baseUrl . '/ChildYoungLaw/Detail/' . $rawId);
         file_put_contents($rawFile, $crawler->html());
     }
-    $pos = strpos($page, '/ChildYoungLaw/Detail/', $posEnd);
 
     $raw = file_get_contents($rawFile);
-    if (false !== strpos($raw, '文章不再存在')) {
-        continue;
+    if (strpos($raw, '文章不再存在') !== false) {
+        return;
     }
+
+    $data = parseDetailPage($raw, $rawId, $baseUrl);
+    $dataFile = $dataPath . '/' . $rawId . '.json';
+    file_put_contents($dataFile, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+});
+
+function parseDetailPage(string $raw, int $rawId, string $baseUrl): array
+{
+    $data = ['id' => $rawId];
+
     $rawPos = strpos($raw, '<div id="main" class="main">');
     $rawPosEnd = strpos($raw, '<div class="btnArea">', $rawPos);
     $main = substr($raw, $rawPos, $rawPosEnd - $rawPos);
-    $parts = explode('<div class="tr" role="row">', $main);
-    if (!isset($parts[1])) {
-        continue;
-    }
 
-    foreach ($parts as $part) {
-        $cols = explode('</div>', $part);
-        if (false === strpos($cols[0], 'columnheader')) {
+    $rows = explode('<div class="tr" role="row">', $main);
+    array_shift($rows);
+
+    foreach ($rows as $row) {
+        $cols = explode('</div>', $row);
+        if (strpos($cols[0], 'columnheader') === false) {
             continue;
         }
+
         $header = strip_tags(trim($cols[0]));
-        if (false !== strpos($cols[1], '<span class="detailTitle">')) {
-            $contentParts = explode('<span class="col-12">', $cols[1]);
-            if (!isset($contentParts[1])) {
-                $contentParts = explode('<span class="col">', $cols[1]);
-            }
-            $content = [];
-            foreach ($contentParts as $contentPart) {
-                $conteltCols = explode('</span>', $contentPart);
-                if (count($conteltCols) === 3) {
-                    foreach ($conteltCols as $k => $v) {
-                        $conteltCols[$k] = strip_tags(trim($v));
-                    }
-                    $content[$conteltCols[0]] = $conteltCols[1];
-                }
-            }
-        } elseif (false !== strpos($cols[1], 'href="')) {
-            $contentParts = explode('"', $cols[1]);
-            $content = 'https://crc.sfaa.gov.tw' . $contentParts[3];
-        } else {
-            $content = trim(strip_tags($cols[1]));
-        }
-        $data[$header] = $content;
+        $data[$header] = parseColumnContent($cols[1], $baseUrl);
     }
-    $dataFile = $dataPath . '/' . $data['id'] . '.json';
-    file_put_contents($dataFile, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+    return $data;
+}
+
+function parseColumnContent(string $html, string $baseUrl)
+{
+    if (strpos($html, '<span class="detailTitle">') !== false) {
+        return parseDetailSpans($html);
+    }
+
+    if (strpos($html, 'href="') !== false) {
+        $parts = explode('"', $html);
+        return $baseUrl . $parts[3];
+    }
+
+    return trim(strip_tags($html));
+}
+
+function parseDetailSpans(string $html): array
+{
+    $contentParts = explode('<span class="col-12">', $html);
+    if (!isset($contentParts[1])) {
+        $contentParts = explode('<span class="col">', $html);
+    }
+
+    $content = [];
+    foreach ($contentParts as $contentPart) {
+        $spans = explode('</span>', $contentPart);
+        if (count($spans) === 3) {
+            $key = strip_tags(trim($spans[0]));
+            $value = strip_tags(trim($spans[1]));
+            $content[$key] = $value;
+        }
+    }
+
+    return $content;
 }
