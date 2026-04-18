@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="/Content/Front/css/FontsGoogleApiCss.css?family=Noto+Sans+TC:300,400,500,700|Noto+Serif+TC:300,400,500,600,700&amp;display=swap">
 
     <!-- &#29128;&#31665; -->
-    <link rel="stylesheet" href="/Content/Front/js/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen">
-    <link rel="stylesheet" href="/Content/Front/js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5">
-    <link rel="stylesheet" href="/Content/Front/js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7">
+    <link href="/Content/Front/js/fancybox/source-3.5.7/jquery.fancybox.css" rel="stylesheet">
+    
     <!-- &#29128;&#31665; END -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- &#36650;&#25773; -->
@@ -110,7 +109,6 @@
                 </a>
                 <!--
                 -->
-
             </nav>
         </div>
 
@@ -128,23 +126,22 @@
             </a>
             <div>
                 <!-- &#8595;&#8595;&#8595; 20210122 &#20462;&#25913;&#24433;&#38899;&#23560;&#21312;&#36229;&#36899;&#32080;&#30340; class -->
-                <a href="/FrontEndMedia/Video" title="前往影音專區" class="header_area header_media">
-                    影音專區
-                </a>
+                
                 <!-- &#8595;&#8595;&#8595; 20210122 &#26032;&#22686;&#35009;&#32624;&#23560;&#21312;&#36899;&#32080; -->
-                <a href="/Home/Sanction" title="前往裁罰專區" class="header_area header_penalty">
-                    裁罰專區
+                <a href="/Home/Sanction" title="前往裁罰公布" class="header_area header_penalty">
+                    裁罰公布
                 </a>
                 <!-- &#8593;&#8593;&#8593; 20210122 &#20462;&#25913; class&#65292;&#20006;&#26032;&#22686;&#35009;&#32624;&#23560;&#21312;&#36899;&#32080; -->
+                <a href="/Ubmsys" title="前往縣市登錄" class="header_area header_penalty header_singin">
+                    縣市登錄
+                </a>
                 <a href="/Child" title="前往兒童版網站" class="header_kids">
                     <img src="/Content/Front/images/header_kids.svg" alt="兒童版">
                 </a>
             </div>
         </div>
     </div>
-
 </header>
-
 
 <!-- &#20027;&#36984;&#21934; -->
 <nav class="menu">
@@ -200,7 +197,7 @@
                                 <a href="/PublishCRC/CommonPage?folderid=78" title="前往 行政院兒童及少年福利與權益推動小組">行政院兒童及少年福利與權益推動小組</a>
                             </li>
                             <li class="dropdown-menu_item">
-                                <a href="/PublishCRC/CommonPage?folderid=79" title="前往 中央兒童及少年代表團">中央兒童及少年代表團</a>
+                                <a href="/PublishCRC/CommonPage?folderid=79" title="前往 兒少代表遴選">兒少代表遴選</a>
                             </li>
                             <li class="dropdown-menu_item">
                                 <a href="/PublishCRC/CommonPage?folderid=80" title="前往 推動CRC施行法諮詢會議">推動CRC施行法諮詢會議</a>
@@ -231,7 +228,6 @@
                                         其他國際文書
                                     </a>
                                 </li>
-
                         </ul>
                     </li>
                                     <!-- &#22283;&#23478;&#22577;&#21578;&#21450;&#22283;&#38555;&#23529;&#26597; -->
@@ -248,7 +244,11 @@
                                         第二次國家報告
                                     </a>
                                 </li>
-
+                                <li class="dropdown-menu_item">
+                                    <a href="/Document?folderid=498" title="前往 第三次國家報告">
+                                        第三次國家報告
+                                    </a>
+                                </li>
                         </ul>
                     </li>
                                     <!-- &#27861;&#35215;&#27298;&#35222; -->
@@ -266,11 +266,10 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-menu_item">
-                                    <a href="/Document?folderid=485" title="前往 兒少權利影響評估">
-                                        兒少權利影響評估
+                                    <a href="/Document?folderid=485" title="前往 權利影響評估">
+                                        權利影響評估
                                     </a>
                                 </li>
-
                         </ul>
                     </li>
                                     <!-- &#25945;&#32946;&#23459;&#23566; -->
@@ -367,8 +366,8 @@
                             </li>
 
                             <li class="dropdown-menu_item">
-                                <a href="/ChildYoungLaw/Sanction" title="前往 違反兒少法公告">
-                                    違反兒少法公告
+                                <a href="/ChildYoungLaw/Sanction" title="前往 違反兒少法">
+                                    違反兒少法
                                 </a>
                             </li>
                             <li class="dropdown-menu_item">
@@ -397,12 +396,6 @@
                                         國際組織
                                     </a>
                                 </li>
-                                <li class="dropdown-menu_item">
-                                    <a href="/Document?folderid=486" title="前往 各縣市裁罰公告">
-                                        各縣市裁罰公告
-                                    </a>
-                                </li>
-
                         </ul>
                     </li>
                             </ul>
@@ -417,6 +410,15 @@
     <!-- &#36650;&#25773; -->
     <!-- Banner &#36650;&#25773; -->
     <div class="regular slider banner">
+            <a href="https://crc.sfaa.gov.tw/Document/Detail?documentId=4C7C8EF2-4ECB-4678-84D7-1529C1CDE9E4">
+                <img src="/Uploadfile/Banner/80_20260416161646_3129122.jpg" alt="兒童權利公約（CRC）第三次國家報告第2輪民間審查會議開放報名">
+            </a>
+            <a>
+                <img src="/Uploadfile/Banner/5619-20190104_15793.jpg" alt="兒童權利公約小手">
+            </a>
+            <a href="https://crc.sfaa.gov.tw/News/Document?documentId=5696a046-e165-4195-bf0a-9fc50fa10305">
+                <img src="/Uploadfile/Banner/111_20260402095859_1838774.png" alt="115年兒童節活動">
+            </a>
     </div>
     <!-- Banner &#36650;&#25773; END -->
 
@@ -425,10 +427,8 @@
         
 
 
-
 <div id="main" class="main">
     <a href="#C" id="C" accesskey="C" class="a11y" title="中央內容區塊">:::</a>
-
 
     <!-- &#20818;&#31461;&#27402;&#21033;&#20844;&#32004; -->
     <div class="kids_area">
@@ -443,7 +443,6 @@
             </div>
         </a>
     </div>
-
 
     <!-- &#24433;&#38899;&#23560;&#21312; -->
     <div class="video_area">
@@ -475,39 +474,36 @@
             <div>
                 <header>國內外最新消息</header>
                 <ul>
-                        <li>
-                            <a href="/News/Document?documentId=c0f93a54-640e-41b1-ad6a-7655d220f326" title="查看新聞：【轉知】中華民國信託業商業同業公會「113年第1期社福團體擔任信託監察人課程」，歡迎報名。">
-                                2024-03-06
-                                <span>【轉知】中華民國信託業商業同業公會「113年第1期社福團體擔任信託監察人課程」，歡迎報名。</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/News/Document?documentId=25471a9d-a9e8-42be-85ac-551d0a77a799" title="查看新聞：【公告】行政院兒童及少年福利與權益推動小組第五屆第2次臨時會議紀錄公告">
-                                2024-02-15
-                                <span>【公告】行政院兒童及少年福利與權益推動小組第五屆第2次臨時會議紀錄公告</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/News/Document?documentId=6a12cca5-0388-4e43-a0c4-1be5c4b99ec4" title="查看新聞：【公告】推動CRC施行法第39次諮詢會議紀錄">
-                                2024-02-07
-                                <span>【公告】推動CRC施行法第39次諮詢會議紀錄</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/News/Document?documentId=3ac673e2-5ab7-467a-b28f-3f378fa59071" title="查看新聞：【公告】行政院兒童及少年福利與權益推動小組第五屆第4次會議紀錄公告">
-                                2024-01-19
-                                <span>【公告】行政院兒童及少年福利與權益推動小組第五屆第4次會議紀錄公告</span>
-                            </a>
-                        </li>
-
+                            <li>
+                                <a href="/News/Document?documentId=cd8e4753-eb5d-4837-80d1-0244f69655a2" title="查看新聞：【轉知】彰化縣115年度兒童及少年代表基礎培力課程資訊">
+                                    2026-04-16
+                                    <span>【轉知】彰化縣115年度兒童及少年代表基礎培力課程資訊</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/News/Document?documentId=3ddd50a8-1a75-4a9a-b5c1-44f4661aac9a" title="查看新聞：【轉知】-兒福聯盟  2026《講話吧》兒少編寫營">
+                                    2026-04-10
+                                    <span>【轉知】-兒福聯盟  2026《講話吧》兒少編寫營</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/News/Document?documentId=e7417de4-26bf-4f51-9009-b22d7e03238f" title="查看新聞：【轉知】社團法人中華民國身心障礙聯盟-身心障礙兒少家庭培力計畫~2026身心障礙兒少意見交流大會">
+                                    2026-04-09
+                                    <span>【轉知】社團法人中華民國身心障礙聯盟-身心障礙兒少家庭培力計畫~2026身心障礙兒少意見交流大會</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/News/Document?documentId=5696a046-e165-4195-bf0a-9fc50fa10305" title="查看新聞：【新聞稿】《小勇士的幸福故事》舞台劇巡演，提倡兒童反歧視與反霸凌精神">
+                                    2026-04-02
+                                    <span>【新聞稿】《小勇士的幸福故事》舞台劇巡演，提倡兒童反歧視與反霸凌精神</span>
+                                </a>
+                            </li>
                 </ul>
 
                 <a class="more_news" href="/News/List" title="了解更多國內外最新消息">國內外最新消息更多</a>
-
             </div>
         </div>
     </div>
-
 
     <!-- &#22810;&#20803;&#25945;&#26448; -->
     <section class="teaching_area">
@@ -527,7 +523,6 @@
             </a>
         </div>
     </section>
-
 
     <!-- &#22283;&#23478;&#22577;&#21578; -->
     <section class="report_area">
@@ -554,35 +549,53 @@
             <section>
                 <h2>相關活動照片</h2>
 
-
-                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20231122170742_1722058.jpg" title="開啟112年臺灣女孩日-超女力證能量線上影展01">
-                    <img src="/Uploadfile/ActivePhoto/48_20231122170742_1722058.jpg" alt="112年臺灣女孩日-超女力證能量線上影展01">
+                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100111_1683562.jpg" title="開啟01-偏見眼鏡行戲劇工作坊-思思的故事">
+                    <img src="/Uploadfile/ActivePhoto/48_20251113100111_1683562.jpg" alt="01-偏見眼鏡行戲劇工作坊-思思的故事">
                 </a>
                 <div>
 
-                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20231122170808_6227692.jpg" title="開啟112年臺灣女孩日-超女力證能量線上影展02">
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100147_8421273.jpg" title="開啟02-偏見眼鏡行戲劇工作坊-互動討論">
                                     <div>
 
-                                        <img src="/Uploadfile/ActivePhoto/48_20231122170808_6227692.jpg" alt="112年臺灣女孩日-超女力證能量線上影展02">
-
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100147_8421273.jpg" alt="02-偏見眼鏡行戲劇工作坊-互動討論">
                                     </div>
                                 </a>
-                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20231122170825_460727.jpg" title="開啟112年臺灣女孩日-超女力證能量線上影展03">
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100322_9402718.jpg" title="開啟03-偏見眼鏡行戲劇工作坊-學生角色扮演">
                                     <div>
 
-                                        <img src="/Uploadfile/ActivePhoto/48_20231122170825_460727.jpg" alt="112年臺灣女孩日-超女力證能量線上影展03">
-
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100322_9402718.jpg" alt="03-偏見眼鏡行戲劇工作坊-學生角色扮演">
                                     </div>
                                 </a>
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100526_458844.JPG" title="開啟04-偏見眼鏡行戲劇工作坊-角色扮演2">
+                                    <div>
 
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100526_458844.JPG" alt="04-偏見眼鏡行戲劇工作坊-角色扮演2">
+                                    </div>
+                                </a>
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100605_8215459.jpg" title="開啟05-偏見眼鏡行戲劇工作坊-角色扮演3">
+                                    <div>
+
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100605_8215459.jpg" alt="05-偏見眼鏡行戲劇工作坊-角色扮演3">
+                                    </div>
+                                </a>
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100633_511713.jpg" title="開啟06-偏見眼鏡行戲劇工作坊-大合照">
+                                    <div>
+
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100633_511713.jpg" alt="06-偏見眼鏡行戲劇工作坊-大合照">
+                                    </div>
+                                </a>
+                                <a class="fancybox-thumb" rel="fancybox-thumb" href="/Uploadfile/ActivePhoto/48_20251113100934_0222299.jpg" title="開啟07-偏見眼鏡行戲劇工作坊-主視覺">
+                                    <div>
+
+                                        <img src="/Uploadfile/ActivePhoto/48_20251113100934_0222299.jpg" alt="07-偏見眼鏡行戲劇工作坊-主視覺">
+                                    </div>
+                                </a>
                 </div>
 
                 <a href="/FrontEndMedia/PhotoAlubm" class="more_pic" title="相關活動照片更多">相關活動照片更多</a>
             </section>
-
         </div>
 </div>
-
     </main>
     <!--&#20839;&#38913; End-->
     <!--Footer-->
@@ -605,10 +618,10 @@
                     <dt>推動CRC</dt>
                     <dd>
                         <a href="/PublishCRC/CommonPage?folderid=29" class="fas fa-chevron-right" title="前往 CRC"> CRC</a>
-                        <a href="/PublishCRC/CommonPage?folderid=77 class=" fas title="前往 CRC施行法">CRC施行法</a>
+                        <a href="/PublishCRC/CommonPage?folderid=77" class="fas fa-chevron-right" title="前往 CRC施行法">CRC施行法</a>
                         <a href="/PublishCRC/Memorabilia" class="fas fa-chevron-right" title="前往 CRC大事記">CRC大事記</a>
                         <a href="/PublishCRC/CommonPage?folderid=78" class="fas fa-chevron-right" title="前往 行政院兒童及少年福利與權益推動小組">行政院兒童及少年福利與權益推動小組</a>
-                        <a href="/PublishCRC/CommonPage?folderid=79" class="fas fa-chevron-right" title="前往 中央兒童及少年代表團">中央兒童及少年代表團</a>
+                        <a href="/PublishCRC/CommonPage?folderid=79" class="fas fa-chevron-right" title="前往 兒少代表遴選">兒少代表遴選</a>
                         <a href="/PublishCRC/CommonPage?folderid=80" class="fas fa-chevron-right" title="前往 推動CRC施行法諮詢會議">推動CRC施行法諮詢會議</a>
                     </dd>
                 </dl>
@@ -628,6 +641,7 @@
                     <dd>
                             <a href="/Document?folderid=115" class="fas fa-chevron-right" title="首次國家報告">首次國家報告</a>
                             <a href="/Document?folderid=117" class="fas fa-chevron-right" title="第二次國家報告">第二次國家報告</a>
+                            <a href="/Document?folderid=498" class="fas fa-chevron-right" title="第三次國家報告">第三次國家報告</a>
                     </dd>
                 </dl>
                             <!-- &#27861;&#35215;&#27298;&#35222; -->
@@ -636,7 +650,7 @@
                     <dd>
                             <a href="/Document?folderid=118" class="fas fa-chevron-right" title="法規檢視工作流程">法規檢視工作流程</a>
                             <a href="/Document?folderid=119" class="fas fa-chevron-right" title="法規檢視情形">法規檢視情形</a>
-                            <a href="/Document?folderid=485" class="fas fa-chevron-right" title="兒少權利影響評估">兒少權利影響評估</a>
+                            <a href="/Document?folderid=485" class="fas fa-chevron-right" title="權利影響評估">權利影響評估</a>
                     </dd>
                 </dl>
                             <!-- &#25945;&#32946;&#23459;&#23566; -->
@@ -679,7 +693,7 @@
                         <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=D0050001" class="fas fa-chevron-right" title="(另開新視窗) 前往兒少法" target="_blank">兒少法</a>
                         <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050010" class="fas fa-chevron-right" title="(另開新視窗) 前往兒少法施行細則" target="_blank">兒少法施行細則</a>
                         <!--<a href="#" title="(&#21478;&#38283;&#26032;&#35222;&#31383;) &#21069;&#24448;&#20818;&#23569;&#27861;&#30456;&#38364;&#35299;&#37323;" target="_blank">&#20818;&#23569;&#27861;&#30456;&#38364;&#35299;&#37323;</a>-->
-                        <a href="/ChildYoungLaw/Sanction" class="fas fa-chevron-right" title="前往違反兒少法公告">違反兒少法公告</a>
+                        <a href="/ChildYoungLaw/Sanction" class="fas fa-chevron-right" title="前往違反兒少法">違反兒少法</a>
                         <a href="/Ubmsys" class="fas fa-chevron-right" title="(另開新視窗) 前往縣市政府填報專區" target="_blank">縣市政府填報專區</a>
                     </dd>
                 </dl>
@@ -690,14 +704,11 @@
                             <a href="/Document?folderid=75" class="fas fa-chevron-right" title="政府宣導專區">政府宣導專區</a>
                             <a href="/Document?folderid=122" class="fas fa-chevron-right" title="民間團體">民間團體</a>
                             <a href="/Document?folderid=123" class="fas fa-chevron-right" title="國際組織">國際組織</a>
-                            <a href="/Document?folderid=486" class="fas fa-chevron-right" title="各縣市裁罰公告">各縣市裁罰公告</a>
                     </dd>
                 </dl>
 
-
         </div>
     </nav>
-
 
     <div class="footerInfo">
         <div class="wrapper">
@@ -707,7 +718,7 @@
                 </a>
                 <span>
                     衛生福利部社會及家庭署本部：
-                    <span>11558 臺北市南港區忠孝東路六段 488 號 12 樓</span>
+                    <span>115204 臺北市南港區忠孝東路六段 488 號 12 樓</span>
                 </span>
 
                 <span>聯絡電話 (02)2653-1776</span>
@@ -719,12 +730,11 @@
                 <span>最佳螢幕解析度 1024 * 768</span>
             </address>
 
-            <a href="https://accessibility.ncc.gov.tw/Applications/Detail?category=20210511145725" title="(另開新視窗) 前往無障礙標章網頁檢測" target="_blank">
-                <img src="/Content/Front/images/A.jpg" alt="無障礙A 標籤" style="width: 88px; height: 31px; margin-top: 10px;">
+            <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20250612164104" title="(另開新視窗) 無障礙網站" target="_blank">
+                <img src="/Content/Front/images/AA.png" alt="通過AA無障礙網頁檢測" style="width: 88px; height: 31px; margin-top: 10px;">
             </a>
         </div>
     </div>
-
 
     <nav class="footerBottom">
         <div class="wrapper">
@@ -737,16 +747,11 @@
 </footer>
     <!--Footer End-->
 
-    <a href="#gotomain" title="返回頂端" id="scrollup" class="scrollup"><i class="fas fa-chevron-up">‌</i><span>返回頂端</span></a>
+    <a href="#gotomain" title="返回頂端" role="button" id="scrollup" class="scrollup"><i class="fas fa-chevron-up">‌</i><span>返回頂端</span></a>
     <script src="/Content/Front/js/slick/slick.min.js"></script>
     <!-- &#29128;&#31665;JS -->
-
-    <script src="/Content/Front/js/fancybox/lib/jquery.mousewheel.pack.js?v=3.1.3"></script>
-    <script src="/Content/Front/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script src="/Content/Front/js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-    <script src="/Content/Front/js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-    <script src="/Content/Front/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-
+    
+    <script src="/Content/Front/js/fancybox/source-3.5.7/jquery.fancybox.js"></script>
     <!-- &#29128;&#31665;JS END -->
     <!-- &#8595;&#8595;&#8595; 20201126 &#20840;&#31449;&#26032;&#22686; -->
     <script src="/Content/Front/js/jfontsize/jstorage.js"></script>
@@ -779,7 +784,11 @@
         });
 
         $(document).ready(function () {
+
             $('.fancybox-thumb').fancybox({
+                trapFocus: true,       // &#30906;&#20445;&#28966;&#40670;&#21482;&#20572;&#30041;&#22312;&#24392;&#31383;&#20839;
+                autoFocus: true,       // &#24392;&#31383;&#38283;&#21855;&#26178;&#33258;&#21205;&#32858;&#28966;&#21040;&#31532;&#19968;&#20491;&#21487;&#32858;&#28966;&#20803;&#32032;
+                keyboard: true,         // &#21855;&#29992;&#37749;&#30436;&#25805;&#20316;&#65288;ESC&#12289;&#8592;&#8594;&#31561;&#65289;
                 padding: 0 /*&#22914;&#35201;&#37002;&#26694;&#65292;&#21034;&#25481;&#36889;&#19968;&#26781;*/,
                 prevEffect: 'none',
                 nextEffect: 'none',
