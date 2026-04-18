@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInitaa85d59f4ec314ab3876cba6942a8b83
 {
     public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -21,6 +21,7 @@ class ComposerStaticInitaa85d59f4ec314ab3876cba6942a8b83
             'Symfony\\Contracts\\HttpClient\\' => 29,
             'Symfony\\Component\\HttpClient\\' => 29,
             'Symfony\\Component\\DomCrawler\\' => 29,
+            'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\BrowserKit\\' => 29,
         ),
         'P' => 
@@ -58,6 +59,10 @@ class ComposerStaticInitaa85d59f4ec314ab3876cba6942a8b83
         'Symfony\\Component\\DomCrawler\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
         'Symfony\\Component\\BrowserKit\\' => 
         array (

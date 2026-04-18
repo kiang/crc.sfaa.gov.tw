@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '6b4c1b379410ee04c3b9d44c171e044ca0e5a351',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '6b4c1b379410ee04c3b9d44c171e044ca0e5a351',
             'dev_requirement' => false,
         ),
         'masterminds/html5' => array(
@@ -71,6 +71,15 @@
             'install_path' => __DIR__ . '/../symfony/browser-kit',
             'aliases' => array(),
             'reference' => '495ffa2e6d17e199213f93768efa01af32bbf70e',
+            'dev_requirement' => false,
+        ),
+        'symfony/css-selector' => array(
+            'pretty_version' => 'v8.0.8',
+            'version' => '8.0.8.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/css-selector',
+            'aliases' => array(),
+            'reference' => '8db1c00226a94d8ab6aa89d9224eeee91e2ea2ed',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
